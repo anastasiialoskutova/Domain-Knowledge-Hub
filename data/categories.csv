@@ -1,0 +1,7 @@
+category_id,name,tax_rate
+CAT_LAP,Laptops,0.2
+CAT_PHN,Smartphones,0.2
+CAT_ACC,Accessories,0.2
+CAT_AUD,Audio,0.2
+CAT_SMH,Smart Home,0.2
+CAT_FIN,Fintech Subscriptions,0.0

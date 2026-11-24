@@ -1,0 +1,5 @@
+segment_id,name,min_ltv
+SEG_VIP,VIP High-Spenders,1500.0
+SEG_TECH,Tech Enthusiasts,500.0
+SEG_BUDGET,Budget Hunters,50.0
+SEG_NEW,Newcomers,0.0

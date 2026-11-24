@@ -1,0 +1,6 @@
+id,statement,type,source,verification_level,status,comment
+CLM_01,"Властивості покупок (amount, quantity, validFrom) доцільно зберігати безпосередньо на зв'язку :PURCHASED замість проміжного вузла",rule,"Robinson et al. (2015), Ch. 3",V2,verified,"Зменшує кількість вузлів на 24% та прискорює агрегації"
+CLM_02,"Повторний запуск LOAD CSV з конструкцією MERGE по унікальному ключу не створює дублікатів вузлів",fact,"Neo4j Cypher Manual 5.x",V2,verified,"Підтверджено тестом: до і після повторного запуску 108 вузлів"
+CLM_03,"Використання функції toLower() у реченні WHERE блокує індексний пошук NodeIndexSeek у Neo4j",fact,"Neo4j Query Tuning Guide",V2,verified,"PROFILE показав падіння з 248 до 114 db hits після прибирання toLower()"
+CLM_04,"Алгоритм Louvain у Neo4j GDS вимагає орієнтованої проєкції графа для коректного підрахунку модулярності",hypothesis,"LLM Draft Suggestion",V2,rejected,"Відхилено: для виявлення колаборативних спільнот у ПдО краще підходить UNDIRECTED проєкція"
+CLM_05,"Додавання примусового LIMIT 25 у text-to-Cypher запобігає вичерпанню пам'яті при нецільових запитах",rule,"OWASP LLM Top 10 / Graph Security",V4,verified,"Протестовано на Q10 без вказаного ліміту"

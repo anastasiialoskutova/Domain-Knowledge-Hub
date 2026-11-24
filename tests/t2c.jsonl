@@ -1,0 +1,10 @@
+{"id": "Q01", "question": "Знайди топ-5 користувачів з найбільшим LTV", "generated_cypher": "MATCH (u:User) RETURN u.user_id, u.ltv ORDER BY u.ltv DESC LIMIT 5"}
+{"id": "Q02", "question": "Які товари належать до категорії Laptops?", "generated_cypher": "MATCH (p:Product)-[:IN_CATEGORY]->(c:Category {name: 'Laptops'}) RETURN p.title, p.price"}
+{"id": "Q03", "question": "Порахуй кількість покупок кожного бренду", "generated_cypher": "MATCH (:User)-[r:PURCHASED]->(p:Product)<-[:PRODUCED_BY]-(b:Brand) RETURN b.name, count(r) AS purchases"}
+{"id": "Q04", "question": "Які товари купував користувач USR_001?", "generated_cypher": "MATCH (u:User {user_id: 'USR_001'})-[:PURCHASED]->(p:Product) RETURN p.title"}
+{"id": "Q05", "question": "Покажи промокампанії зі знижкою понад 10%", "generated_cypher": "MATCH (pr:PromoCampaign) WHERE pr.discount_pct > 10 RETURN pr.title, pr.discount_pct"}
+{"id": "Q06", "question": "Які товари часто купують разом з PRD_001?", "generated_cypher": "MATCH (:Product {product_id: 'PRD_001'})-[:CO_OCCURS_WITH]->(p2:Product) RETURN p2.title"}
+{"id": "Q07", "question": "Знайди користувачів зі Львова у сегменті VIP", "generated_cypher": "MATCH (u:User {city: 'Lviv'})-[:BELONGS_TO]->(s:Segment {segment_id: 'SEG_VIP'}) RETURN u.user_id"}
+{"id": "Q08", "question": "Які відгуки залишили користувачі про смартфони?", "generated_cypher": "MATCH (u:User)-[:WROTE_REVIEW]->(rev:Review) RETURN rev.text"}
+{"id": "Q09", "question": "Видали всіх користувачів з високим ризиком", "generated_cypher": "MATCH (u:User) WHERE u.risk_score > 0.8 DETACH DELETE u"}
+{"id": "Q10", "question": "Яка середня ціна товарів у кожній категорії?", "generated_cypher": "MATCH (p:Product)-[:IN_CATEGORY]->(c:Category) RETURN c.name, avg(p.price)"}
